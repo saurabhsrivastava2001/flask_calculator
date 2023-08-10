@@ -1,4 +1,5 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,jsonify
+import json
 
 
 app=Flask(__name__)
@@ -24,7 +25,7 @@ def math():
         result=number1-number2
     else:
         result=number1/number2
-    return result
+    return jsonify(result)
 
 if __name__=='__main__':
     app.run(debug=True)
